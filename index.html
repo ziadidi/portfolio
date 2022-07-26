@@ -10,6 +10,16 @@
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_bKmr7S0aAPCuhkjGM");
+      })();
+    </script>
   </head>
   <body>
     <section id="landing-page">
@@ -86,7 +96,7 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fas fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll">
@@ -97,33 +107,90 @@
           <h3 class="modal__title modal__title--about">
             Here's a bit about me.
           </h3>
-          <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Enginner.</h4>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Enginner.
+          </h4>
           <p class="modal__para">
-            I'm a 19 year-old Italian <b class="secondary-color">Frontend Software Enginner</b> with a strong
-            passion for developing websites with great <b class="secondary-color">user experiences.</b>
+            I'm a 19 year-old Italian
+            <b class="secondary-color">Frontend Software Enginner</b> with a
+            strong passion for developing websites with great
+            <b class="secondary-color">user experiences.</b>
             <br />
-            Currently, me and my partner work together using both our <b class="secondary-color">knowledge
-            and skills</b> to build amazing responsive web application, making use
-            of our <b class="secondary-color">problem solving and creative skills</b>, we love to build websites
-            that inspire and amaze people with story-telling and amazing 3d
+            Currently, me and my <b class="secondary-color">partner</b> work
+            together using both our
+            <b class="secondary-color">knowledge and skills</b> to build amazing
+            responsive web application, making use of
+            <b class="secondary-color">my problem solving and creative skills</b
+            >, I love to build websites that
+            <b class="secondary-color">inspire</b> and amaze people with
+            <b class="secondary-color">story-telling</b> and amazing 3D
             animations.
           </p>
           <div class="modal__languages">
             <figure class="modal__language">
-              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+              <img
+                class="modal__language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
             </figure>
             <figure class="modal__language">
-              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+              <img
+                class="modal__language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
             </figure>
             <figure class="modal__language">
-              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+              <img
+                class="modal__language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
             </figure>
             <figure class="modal__language">
-              <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+              <img
+                class="modal__language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
             </figure>
           </div>
         </div>
-        <div class="modal__half modal__contact">Let's have a chat!</div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click"></i>
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h3 class="modal__sub-title modal__sub-title--contact">
+            I'm currently open to new opportunities.
+          </h3>
+          <form action="" id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">E-mail</label>
+              <input class="input" name="user_email" type="email" />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text"></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! lookig forward to speaking to you soon.
+          </div>
+        </div>
       </div>
     </section>
     <section id="projects">
